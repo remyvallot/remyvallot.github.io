@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rémy Vallot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="global-wrapper" id="main-header">
+
+    <div class="header-horizontal">
+      <a href="#home" onclick="loadPage('home')">
+        <img src="avatar.png" alt="Profile Picture" class="avatar">
+      </a>
+      <div class="title-block">
+        <div class="title-line">
+          <h1>
+            <a href="#home" onclick="loadPage('home')" class="title-link">Rémy Vallot</a>
+          </h1>
+          <div class="social-buttons">
+            <a href="mailto:remy.vallot@ens-paris-saclay.fr" class="glass-btn" title="Email">
+              <img src="img/email.svg" alt="Mail">
+            </a>
+            <a href="https://www.linkedin.com/in/remy-vallot/" class="glass-btn" title="LinkedIn" target="_blank">
+              <img src="img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/remyvallot" class="glass-btn" title="GitHub" target="_blank">
+              <img src="img/github.svg" alt="GitHub">
+            </a>
+            <a href="https://youtube.com/remyvallot" class="glass-btn" title="YouTube" target="_blank">
+              <img src="img/youtube-outline.svg" alt="YouTube">
+            </a>
+          </div>
+        </div>
+        <p class="subtitle">
+          Ph.D. candidate in Applied Mathematics<br>
+          Trying to accelerate the convergence of nonlinear solvers.
+        </p>
+        <p class="location">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#666" viewBox="0 0 24 24" class="map-icon">
+            <path d="M12 2a7.008 7.008 0 0 0-7 7c0 5.353 6.036 11.45 6.293 11.707l.707.707.707-.707C12.964 20.45 19 14.353 19 9a7.008 7.008 0 0 0-7-7zm0 16.533C10.471 16.825 7 12.553 7 9a5 5 0 0 1 10 0c0 3.546-3.473 7.823-5 9.533z"/>
+            <path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/>
+          </svg>
+          École Normale Supérieure Paris-Saclay & Michelin
+        </p>
+      </div>
+    </div>
+  
+
+    <nav>
+
+    <a href="#home" class="nav-link" data-page="home">Home</a>
+    <a href="#highlights" class="nav-link" data-page="highlights">Highlights</a>
+    <a href="#curriculum" class="nav-link" data-page="curriculum">Curriculum</a>
+
+
+    </nav>
+
+    <main id="content">Loading...</main>
+  </div>
+
+  <script>
+    function loadPage(name, push = true) {
+  const currentHash = location.hash.replace(/^#/, '');
+  if (push && currentHash === name) return;
+
+  fetch(name + '.md')
+    .then(res => res.text())
+    .then(md => {
+      document.getElementById('content').innerHTML = marked.parse(md);
+      enhanceHighlights(); // 👈 Appel ici, après insertion HTML
+      if (push) {
+        history.pushState(null, '', '#' + name);
+      }
+    })
+    .then(md => {
+  document.getElementById('content').innerHTML = marked.parse(md);
+  enhanceHighlights(); // ✅ appelé après avoir inséré le contenu
+  
+  if (push) {
+    history.pushState(null, '', '#' + name);
+  }
+});
+}
+    
+
+
+// ✅ Tout ce qui suit attend que le DOM soit prêt
+window.onload = function () {
+  // Initial page load
+  const initialPage = location.hash ? location.hash.substring(1) : 'home';
+  loadPage(initialPage, false);
+
+  // Navigation via back/forward
+  window.addEventListener('popstate', () => {
+    const page = location.hash ? location.hash.substring(1) : 'home';
+    loadPage(page, false);
+  });
+
+  // Interception des clics sur les liens
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const page = link.dataset.page;
+      loadPage(page);
+    });
+  });
+};
+
+function enhanceHighlights() {
+  document.querySelectorAll('div.highlight').forEach(div => {
+    const lines = div.innerText.trim().split('|').map(s => s.trim());
+
+    // Support at least: date | title | desc
+    if (lines.length < 3) return;
+
+    const [date, title, desc, img = null, link = null] = lines;
+
+    // Build the image + link block if available
+    let previewHtml = '';
+    if (img && link) {
+      previewHtml = `
+        <a href="${link}" target="_blank">
+          <img src="${img}" alt="${title} Preview" class="highlight-thumb">
+        </a>
+      `;
+    }
+
+    const newHtml = `
+      <div class="highlight-entry">
+        <div class="highlight-text">
+          <strong>${title}</strong> ${date}<br>${desc}
+        </div>
+        ${previewHtml}
+      </div>
+    `;
+
+    div.outerHTML = newHtml;
+  });
+}
+
+
+
+</script>
+<script>
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("main-header");
+  if (window.scrollY > 100) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+
+</body>
+
+
+</html>

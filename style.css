@@ -1,0 +1,297 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+.page-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header-horizontal,
+#content,
+nav {
+  width: 100%;
+}
+header {
+  margin-bottom: 2rem;
+}
+.header-horizontal {
+  display: flex;
+  align-items: flex-start;  /* ✅ avatar et texte en haut */
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.title-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.title-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  box-shadow: inset 0 0 3px rgba(255,255,255,0.4), 0 1px 4px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s ease-in-out; /* Transition déclarée ici */
+}
+
+.avatar:hover {
+  box-shadow: inset 0 0 3px rgba(255,255,255,0.4), 0 0px 16px rgba(0,0,0,0.35); /* Ombre plus marquée */
+}
+
+
+
+.title-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.2rem 0 0;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.map-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+nav {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;  /* ✅ centre les boutons */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none !important;  /* ✅ force l'annulation du soulignement noir */
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff6600;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  margin-top: 2rem;
+}
+h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2rem;
+  margin-top: 2rem;
+}
+a {
+  color: #ff6600;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* #content {
+  max-width: 720px;      
+  margin: 2rem auto 0;    
+  padding: 0 1rem;
+} 
+*/
+
+.global-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.header-horizontal,
+nav,
+#content {
+  width: 100%;
+}
+
+#content {
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+
+/* Ajout de styles pour les boutons socials */
+.social-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.glass-btn {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: inset 0 0 3px rgba(255,255,255,0.4), 0 1px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+.glass-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+
+#content p {
+  text-align: justify;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content ul,
+#content ol {
+  text-align: left;
+}
+
+
+.highlight-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  gap: 1em;
+}
+
+.highlight-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.highlight-thumb {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.highlight-thumb:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1),
+              0 4px 12px rgba(0, 0, 0, 0.25),
+              inset 0 0 8px rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+
+
+
+.work-thumb {
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-date {
+  text-align: right;
+  margin: 0.2rem 0;
+  width: 100px;
+}
+
+.timeline-details {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.timeline-details p {
+  margin: 0.2rem 0;
+}
+
+.timeline-details em {
+  font-style: italic;
+  color: #444;
+}
+
+.timeline-details a.supervisor {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.timeline-details a.supervisor:hover {
+  text-decoration: none;
+}
