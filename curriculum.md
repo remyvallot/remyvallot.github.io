@@ -48,7 +48,7 @@
     <p><strong>Teaching Assistant</strong> Méthodes Mathématiques (TD, 28h)</p>
     <p>Bachelor level courses (L3). PSL Research University, Paris. </p>
   </div>
-  <div class="timeline-date">*(planned)*</div>
+  <div class="timeline-date">2025</div>
 </div>
 
 
