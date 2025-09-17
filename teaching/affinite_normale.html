@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Affinité de la loi normale — X ~ 𝓝(μ, σ²), Y = aX + b</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root { --pad: 16px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: var(--pad); }
+    h2 { margin: 0 0 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 12px; margin-bottom: 10px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: var(--pad); }
+    .row { display:flex; align-items:center; gap:10px; margin: 8px 0; flex-wrap: wrap; }
+    input[type=range] { width: 180px; }
+    #plot { width: 100%; max-width: 1000px; height: 520px; }
+    code { background:#f5f5f5; padding:2px 6px; border-radius:6px; }
+    .muted { color: #666; }
+    .mono { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+  </style>
+</head>
+<body>
+  <h2>Affinité de la loi normale</h2>
+  <p>On part de <code>X ~ 𝓝(μ, σ²)</code>. Pour <code>Y = a·X + b</code>, on a <code>Y ~ 𝓝(aμ + b, a²σ²)</code>. Utilise les curseurs pour voir l'effet sur la densité.</p>
+  <div class="grid">
+    <div class="card">
+      <strong>Paramètres de X</strong>
+      <div class="row">
+        <label for="mu">μ :</label>
+        <input id="mu" type="range" min="-3" max="3" step="0.05" value="0"/>
+        <span id="muVal" class="mono">0.00</span>
+      </div>
+      <div class="row">
+        <label for="sigma">σ :</label>
+        <input id="sigma" type="range" min="0.3" max="3" step="0.05" value="1"/>
+        <span id="sigmaVal" class="mono">1.00</span>
+      </div>
+    </div>
+    <div class="card">
+      <strong>Transformation affine</strong>
+      <div class="row">
+        <label for="a">a :</label>
+        <input id="a" type="range" min="-3" max="3" step="0.05" value="1"/>
+        <span id="aVal" class="mono">1.00</span>
+      </div>
+      <div class="row">
+        <label for="b">b :</label>
+        <input id="b" type="range" min="-3" max="3" step="0.05" value="0"/>
+        <span id="bVal" class="mono">0.00</span>
+      </div>
+    </div>
+    <div class="card">
+      <strong>Paramètres de Y = aX + b</strong>
+      <div>μ<sub>Y</sub> = a·μ + b = <span id="muy" class="mono">0.00</span></div>
+      <div>σ<sub>Y</sub><sup>2</sup> = a²·σ² = <span id="s2y" class="mono">1.00</span></div>
+      <div>σ<sub>Y</sub> = |a|·σ = <span id="sy" class="mono">1.00</span></div>
+      <div class="muted" style="margin-top:8px;">NB : si a &lt; 0, la densité est “retournée” horizontalement.<br/>La variance dépend de a², donc elle est inchangée par le signe de a.</div>
+    </div>
+  </div>
+
+  <div id="plot"></div>
+
+<script>
+const muSlider = document.getElementById('mu');
+const sigmaSlider = document.getElementById('sigma');
+const aSlider = document.getElementById('a');
+const bSlider = document.getElementById('b');
+
+const muVal = document.getElementById('muVal');
+const sigmaVal = document.getElementById('sigmaVal');
+const aVal = document.getElementById('aVal');
+const bVal = document.getElementById('bVal');
+
+const muy = document.getElementById('muy');
+const s2y = document.getElementById('s2y');
+const sy  = document.getElementById('sy');
+
+function normalPDF(x, mu, sigma){
+  const z = (x - mu) / sigma;
+  return Math.exp(-0.5*z*z) / (Math.sqrt(2*Math.PI)*sigma);
+}
+
+const xs = Array.from({length: 1000}, (_,i)=> -10 + 20*i/999);
+
+function render(){
+  const mu = parseFloat(muSlider.value);
+  const sigma = parseFloat(sigmaSlider.value);
+  const a = parseFloat(aSlider.value);
+  const b = parseFloat(bSlider.value);
+
+  muVal.textContent = mu.toFixed(2);
+  sigmaVal.textContent = sigma.toFixed(2);
+  aVal.textContent = a.toFixed(2);
+  bVal.textContent = b.toFixed(2);
+
+  // Parameters of Y
+  const muY = a*mu + b;
+  const sY  = Math.abs(a) * sigma;
+  const s2Y = sY*sY;
+
+  muy.textContent = muY.toFixed(2);
+  s2y.textContent = s2Y.toFixed(2);
+  sy.textContent  = sY.toFixed(2);
+
+  // Densities
+  const yX = xs.map(x => normalPDF(x, mu, sigma));
+  const yY = xs.map(x => normalPDF(x, muY, sY));
+
+  const traceX = { x: xs, y: yX, type: 'scatter', mode: 'lines', name: 'X ~ 𝓝(μ, σ²)' };
+  const traceY = { x: xs, y: yY, type: 'scatter', mode: 'lines', name: 'Y = aX + b' };
+
+  const layout = {
+    title: 'Fonction densité de X et Y',
+    xaxis: { title: 'x', range: [-10, 10] },
+    yaxis: { title: 'densité', rangemode: 'tozero' },
+    legend: { orientation: 'h', y: 1.1 },
+    margin: { t: 50, r: 20, b: 50, l: 50 }
+  };
+  Plotly.newPlot('plot', [traceX, traceY], layout, {responsive:true});
+}
+
+muSlider.oninput = render;
+sigmaSlider.oninput = render;
+aSlider.oninput = render;
+bSlider.oninput = render;
+
+render();
+</script>
+</body>
+</html>
