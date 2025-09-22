@@ -394,15 +394,6 @@ a.glass-btn{
   color:#ff6600;  /* texte orange si tu veux */
 }
 
-/* Mode sombre (optionnel) */
-@media (prefers-color-scheme: dark){
-  .td-row{ background:#111; border-color:#2a2a2a; }
-  .td-title{ color:#eaeaea; }
-  .td-desc{ color:#cfcfcf; }
-  a.glass-btn{ background:#1a1a1a; border-color:#2a2a2a; color:#eaeaea; }
-  .td-btn-label{ color:#9a9a9a; }
-  .td-badge{ color:#cfcfcf; background:#1a1a1a; border-color:#2a2a2a; }
-}
 
 .td-preview { grid-column: 1 / -1; margin-top: 12px; }
 .td-preview[hidden] { display: none; }
