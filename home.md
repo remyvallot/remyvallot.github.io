@@ -1,7 +1,16 @@
+<a href="https://papergraph.net" target="_blank" rel="noopener">
+<div class="papergraph-notification">
+  <img src="img/logo-papergraph.svg" alt="Papergraph" class="papergraph-logo">
+  <div class="papergraph-content">
+    <strong> Discover Papergraph</strong> - Organize and visualize academic literature through an elegant visual graph interface.
+  </div>
+</div>
+</a>
+
 # Welcome 👋
 
 Ever wished you could skip the line at the checkout?  
-That’s (kind of) what I do ... but with equations.
+That's (kind of) what I do ... but with equations.
 
 I’m Rémy Vallot, PhD candidate in Applied Mathematics at ENS Paris-Saclay (Centre Borelli), working with Michelin.  
 I study nonlinear solvers, algorithms that solve tough equations, and I try to make them converge faster. Much faster.
@@ -18,12 +27,12 @@ But starting from scratch is slow, and each step takes time. I look for smart wa
 > ⚡ make **each step more effective** (better iterations)
 
 I use tools from optimization, physics, and machine learning — with a special love for POD (*Proper Orthogonal Decomposition* for newcomers).
-
+<!-- 
 Want to understand how skipping queues relates to solving equations?</br>
 <a href="https://youtube.com" target="_blank" style="text-decoration: none;">
   <img src="img/youtube.svg" alt="YouTube" style="height: 1.2em; vertical-align: middle; margin-right: 0.3em;">
   Watch my animated video for a deeper dive into my PhD!
-</a>
+</a> -->
 
 
 # Outside math?

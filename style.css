@@ -397,3 +397,81 @@ a.glass-btn{
 
 .td-preview { grid-column: 1 / -1; margin-top: 12px; }
 .td-preview[hidden] { display: none; }
+
+/* PaperGraph Notification Box */
+.papergraph-notification {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe6d9 100%);
+  border: 1px solid #ffccb3;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.papergraph-notification:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: #ff6600;
+}
+
+.papergraph-logo {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.papergraph-content {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* .papergraph-content strong {
+  color: #cc5200;
+} */
+
+/* Wrapper link styling - remove default link appearance */
+a:has(.papergraph-notification) {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:has(.papergraph-notification):hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a .papergraph-notification {
+  text-decoration: none;
+  color: inherit;
+}
+
+a .papergraph-notification * {
+  color: inherit;
+  text-decoration: none;
+}
+
+a .papergraph-notification:hover {
+  text-decoration: none;
+}
+
+/* Mobile responsiveness for notification */
+@media (max-width: 600px) {
+  .papergraph-notification {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  
+  .papergraph-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .papergraph-content {
+    font-size: 0.9rem;
+  }
+}
