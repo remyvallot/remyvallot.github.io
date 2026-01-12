@@ -121,7 +121,16 @@ function enhanceHighlights() {
     // Support at least: date | title | desc
     if (lines.length < 3) return;
 
-    const [date, title, desc, img = null, link = null] = lines;
+    const [date, title, desc, img = null, link = null, external = null] = lines;
+
+    // Logo mapping for external resources
+    const EXTERNAL_LOGOS = {
+      'hal': 'img/hal.svg',
+      'arxiv': 'img/arxiv.svg',
+      'github': 'img/github.svg',
+      'youtube': 'img/youtube.svg',
+      'pdf': 'img/pdf.svg'
+    };
 
     // Build the image + link block if available
     let previewHtml = '';
@@ -133,10 +142,24 @@ function enhanceHighlights() {
       `;
     }
 
+    // Build external resource links
+    let externalHtml = '';
+    if (external) {
+      const resources = external.split(',').map(r => r.trim());
+      const buttons = resources.map(r => {
+      const [type, url] = r.split(':').map(s => s.trim());
+      const logo = `https://www.google.com/s2/favicons?domain=${url}&sz=64`;
+      return `<a href="${url}" class="glass-btn" title="${type}" target="_blank"><img src="${logo}" alt="${type}">&nbsp;Available on HAL!</a>`;
+      }).join('');
+      
+      externalHtml = `<div class="highlight-resources">${buttons}</div>`;
+    }
+
     const newHtml = `
       <div class="highlight-entry">
         <div class="highlight-text">
           <strong>${title}</strong> ${date}<br>${desc}
+          ${externalHtml}
         </div>
         ${previewHtml}
       </div>

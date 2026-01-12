@@ -3,6 +3,14 @@
 ## 2025
 
 <div class="highlight">
+December 1–5 | Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago | Lightning talk introducing my poster on convergence acceleration using initialization strategies. | thumbnails/imsi2025_LT.jpg | pdfs/imsi2025_LT.pdf 
+</div>
+
+<div class="highlight">
+December 1–5 | Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago | Presented a poster on convergence acceleration using initialization strategies and comparing the different proposed methods. | thumbnails/imsi2025.png | pdfs/imsi2025.pdf | https://hal.science/hal-05449018v1
+</div>
+
+<div class="highlight">
 June 2–6 | SMAI Biennial Conference | Oral presentation of my ongoing work on convergence acceleration using initialization strategies and comparing the different proposed methods. | thumbnails/smai2025.png | pdfs/smai2025.pdf
 </div>
 
