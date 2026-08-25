@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="googleScholarTitle">
+  <title id="googleScholarTitle">Google Scholar</title>
+  <path d="M12 3 2.75 10.35 12 17.7 21.25 10.35 12 3Z" fill="white" stroke="#0F0F0F" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M6.75 11.45v3.1c0 2.55 2.35 4.45 5.25 4.45s5.25-1.9 5.25-4.45v-3.1" stroke="#0F0F0F" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M12 17.7v-6.3" stroke="#0F0F0F" stroke-width="1.7" stroke-linecap="round"/>
+</svg>

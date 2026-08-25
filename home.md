@@ -9,10 +9,10 @@
 
 # Welcome 👋
 
-Ever wished you could skip the line at the checkout?  
+Ever wished you could skip the line at the checkout?
 That's (kind of) what I do ... but with equations.
 
-I’m Rémy Vallot, PhD candidate in Applied Mathematics at <a href="https://ens-paris-saclay.fr/" style="text-decoration: none;">ENS Paris-Saclay</a> (<a href="https://centreborelli.ens-paris-saclay.fr/fr" style="text-decoration: none;">Centre Borelli</a>), working with <a href="https://www.michelin.com/" style="text-decoration: none;">Michelin</a>.  
+I’m Rémy Vallot, PhD candidate in Applied Mathematics at <a href="https://ens-paris-saclay.fr/" style="text-decoration: none;">ENS Paris-Saclay</a> (<a href="https://centreborelli.ens-paris-saclay.fr/fr" style="text-decoration: none;">Centre Borelli</a>), working with <a href="https://www.michelin.com/" style="text-decoration: none;">Michelin</a>.
 I study nonlinear solvers, algorithms that solve tough equations, and I try to make them converge faster. Much faster.
 
 

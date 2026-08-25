@@ -8,7 +8,7 @@
     <p>Supervisors:
       <a href="https://sites.google.com/site/mougeotmathilde/" class="supervisor">Mathilde Mougeot</a>,
       <a href="https://fdevuyst.jimdofree.com/" class="supervisor">Florian De Vuyst</a>,
-      Thibault Dairay
+      <a href="https://scholar.google.com/citations?user=L_eRA6YAAAAJ&hl=en" class="supervisor">Thibault Dairay </a>
     </p>
   </div>
   <div class="timeline-date">2024–2027</div>

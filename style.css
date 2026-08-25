@@ -129,6 +129,10 @@ nav a:hover::after {
   width: 100%;
 }
 
+nav a.active::after {
+  width: 100%;
+}
+
 main {
   margin-top: 2rem;
 }
@@ -253,6 +257,48 @@ a.glass-btn:hover {
   transform: scale(1.03);
 }
 
+.highlight-resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.highlight-abstract {
+  margin-top: 0.7rem;
+  border-left: 2px solid #ff6600;
+  padding-left: 0.8rem;
+}
+
+.highlight-abstract summary {
+  color: #555;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  width: fit-content;
+}
+
+.highlight-abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.highlight-abstract summary::before {
+  content: "›";
+  display: inline-block;
+  margin-right: 0.35rem;
+  transition: transform 0.2s ease;
+}
+
+.highlight-abstract[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.highlight-abstract p {
+  color: #444;
+  font-size: 0.95rem;
+  margin: 0.45rem 0 0;
+}
+
 
 
 
@@ -296,7 +342,7 @@ a.glass-btn:hover {
 }
 
 .timeline-details a.supervisor {
-  color: #1a73e8;
+  color: #ff6600;
   text-decoration: none;
   font-weight: 500;
 }

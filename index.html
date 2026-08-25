@@ -4,38 +4,37 @@
   <meta charset="UTF-8">
   <title>Rémy Vallot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="YaX1ODyLa3V0D36u9aIgvQXBG_idBO4bus8o-eaboDo" />
+  <meta name="google-site-verification" content="YaX1ODyLa3V0D36u9aIgvQXBG_idBO4bus8o-eaboDo">
   <meta name="description" content="Official website of Rémy Vallot, PhD Candidate in Applied Mathematics & Scientific Computing.">
   <meta name="author" content="Rémy Vallot">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="canonical" href="https://remyvallot.github.io/">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="avatar_tab.png">
 </head>
-<body>
+<body data-page="home">
   <div class="global-wrapper" id="main-header">
-
     <div class="header-horizontal">
-      <a href="#home" onclick="loadPage('home')">
+      <a href="index.html" data-page="home">
         <img src="avatar.png" alt="Profile Picture" class="avatar">
       </a>
       <div class="title-block">
         <div class="title-line">
           <h1>
-            <a href="#home" onclick="loadPage('home')" class="title-link">Rémy Vallot</a>
+            <a href="index.html" data-page="home" class="title-link">Rémy Vallot</a>
           </h1>
           <div class="social-buttons">
             <a href="mailto:remy.vallot@ens-paris-saclay.fr" class="glass-btn" title="Email">
               <img src="img/email.svg" alt="Mail">
             </a>
-            <a href="https://www.linkedin.com/in/remy-vallot/" class="glass-btn" title="LinkedIn" target="_blank">
+            <a href="https://www.linkedin.com/in/remy-vallot/" class="glass-btn" title="LinkedIn" target="_blank" rel="noopener">
               <img src="img/linkedin.svg" alt="LinkedIn">
             </a>
-            <a href="https://github.com/remyvallot" class="glass-btn" title="GitHub" target="_blank">
+            <a href="https://scholar.google.com/citations?user=RF2oOKoAAAAJ&hl=fr&oi=ao" class="glass-btn" title="Google Scholar" target="_blank" rel="noopener">
+              <img src="img/google-scholar.svg" alt="Google Scholar">
+            </a>
+            <a href="https://github.com/remyvallot" class="glass-btn" title="GitHub" target="_blank" rel="noopener">
               <img src="img/github.svg" alt="GitHub">
             </a>
-            <!-- <a href="https://youtube.com/remyvallot" class="glass-btn" title="YouTube" target="_blank">
-              <img src="img/youtube-outline.svg" alt="YouTube">
-            </a> -->
           </div>
         </div>
         <p class="subtitle">
@@ -43,7 +42,7 @@
           Trying to accelerate the convergence of nonlinear solvers.
         </p>
         <p class="location">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#666" viewBox="0 0 24 24" class="map-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#666" viewBox="0 0 24 24" class="map-icon" aria-hidden="true">
             <path d="M12 2a7.008 7.008 0 0 0-7 7c0 5.353 6.036 11.45 6.293 11.707l.707.707.707-.707C12.964 20.45 19 14.353 19 9a7.008 7.008 0 0 0-7-7zm0 16.533C10.471 16.825 7 12.553 7 9a5 5 0 0 1 10 0c0 3.546-3.473 7.823-5 9.533z"/>
             <path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/>
           </svg>
@@ -51,234 +50,56 @@
         </p>
       </div>
     </div>
-  
 
     <nav>
-
-    <a href="#home" class="nav-link" data-page="home">Home</a>
-    <a href="#highlights" class="nav-link" data-page="highlights">Highlights</a>
-    <a href="#curriculum" class="nav-link" data-page="curriculum">Curriculum</a>
-    <!-- <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a> -->
-
-
+      <a href="index.html" class="nav-link active" data-page="home">Home</a>
+      <a href="highlights.html" class="nav-link" data-page="highlights">Highlights</a>
+      <a href="curriculum.html" class="nav-link" data-page="curriculum">Curriculum</a>
     </nav>
 
-    <main id="content">Loading...</main>
+    <main id="content">
+      <a href="https://papergraph.net" target="_blank" rel="noopener">
+      <div class="papergraph-notification">
+        <img src="img/logo-papergraph.svg" alt="Papergraph" class="papergraph-logo">
+        <div class="papergraph-content">
+          <strong> Discover Papergraph</strong> - Organize and visualize academic literature through an elegant visual graph interface.
+        </div>
+      </div>
+      </a>
+      
+      <h1>Welcome 👋</h1>
+      
+      <p>Ever wished you could skip the line at the checkout?<br>That's (kind of) what I do ... but with equations.</p>
+      
+      <p>I’m Rémy Vallot, PhD candidate in Applied Mathematics at <a href="https://ens-paris-saclay.fr/" style="text-decoration: none;">ENS Paris-Saclay</a> (<a href="https://centreborelli.ens-paris-saclay.fr/fr" style="text-decoration: none;">Centre Borelli</a>), working with <a href="https://www.michelin.com/" style="text-decoration: none;">Michelin</a>.<br>I study nonlinear solvers, algorithms that solve tough equations, and I try to make them converge faster. Much faster.</p>
+      
+      <h2>What's the problem?</h2>
+      
+      <p>Solvers are like queues: they start somewhere and go step-by-step until they reach the solution.<br>But starting from scratch is slow, and each step takes time. I look for smart ways to:</p>
+      
+      <blockquote><p>🔁 start <strong>closer to the answer</strong> (smart initialization)</p></blockquote>
+      
+      <blockquote><p>⚡ make <strong>each step more effective</strong> (better iterations)</p></blockquote>
+      
+      <p>I use tools from optimization, physics, and machine learning — with a special love for POD (<em>Proper Orthogonal Decomposition</em> for newcomers).</p>
+      
+      <!-- 
+      Want to understand how skipping queues relates to solving equations?</br>
+      <a href="https://youtube.com" target="_blank" style="text-decoration: none;">
+        <img src="img/youtube.svg" alt="YouTube" style="height: 1.2em; vertical-align: middle; margin-right: 0.3em;">
+        Watch my animated video for a deeper dive into my PhD!
+      </a> -->
+      
+      <h1>Outside math?</h1>
+      
+      <p>I’m passionate about creativity whether it’s through music, composing, drawing, animation, or coding playful ideas.</p>
+      
+      <h1>Let's connect! 🤝</h1>
+      
+      <p>I love challenges where applied math meets real-world mess.<br>Feel free to <a href="mailto:remy.vallot@ens-paris-saclay.fr" style="text-decoration: none;">get in touch</a> or explore the rest!</p>
+    </main>
   </div>
 
-  <script>
-    function loadPage(name, push = true) {
-  const currentHash = location.hash.replace(/^#/, '');
-  if (push && currentHash === name) return;
-
-  fetch(name + '.md')
-    .then(res => res.text())
-    .then(md => {
-      document.getElementById('content').innerHTML = marked.parse(md);
-      enhanceHighlights(); // 👈 Appel ici, après insertion HTML
-      if (push) {
-        history.pushState(null, '', '#' + name);
-      }
-    })
-    .then(md => {
-  document.getElementById('content').innerHTML = marked.parse(md);
-  enhanceHighlights(); // ✅ appelé après avoir inséré le contenu
-  
-  if (push) {
-    history.pushState(null, '', '#' + name);
-  }
-});
-}
-    
-
-
-// ✅ Tout ce qui suit attend que le DOM soit prêt
-window.onload = function () {
-  // Initial page load
-  const initialPage = location.hash ? location.hash.substring(1) : 'home';
-  loadPage(initialPage, false);
-
-  // Navigation via back/forward
-  window.addEventListener('popstate', () => {
-    const page = location.hash ? location.hash.substring(1) : 'home';
-    loadPage(page, false);
-  });
-
-  // Interception des clics sur les liens
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', event => {
-      event.preventDefault();
-      const page = link.dataset.page;
-      loadPage(page);
-    });
-  });
-};
-
-function enhanceHighlights() {
-  document.querySelectorAll('div.highlight').forEach(div => {
-    const lines = div.innerText.trim().split('|').map(s => s.trim());
-
-    // Support at least: date | title | desc
-    if (lines.length < 3) return;
-
-    const [date, title, desc, img = null, link = null, external = null] = lines;
-
-    // Logo mapping for external resources
-    const EXTERNAL_LOGOS = {
-      'hal': 'img/hal.svg',
-      'arxiv': 'img/arxiv.svg',
-      'github': 'img/github.svg',
-      'youtube': 'img/youtube.svg',
-      'pdf': 'img/pdf.svg'
-    };
-
-    // Build the image + link block if available
-    let previewHtml = '';
-    if (img && link) {
-      previewHtml = `
-        <a href="${link}" target="_blank">
-          <img src="${img}" alt="${title} Preview" class="highlight-thumb">
-        </a>
-      `;
-    }
-
-    // Build external resource links
-    let externalHtml = '';
-    if (external) {
-      const resources = external.split(',').map(r => r.trim());
-      const buttons = resources.map(r => {
-      const [type, url] = r.split(':').map(s => s.trim());
-      const logo = `https://www.google.com/s2/favicons?domain=${url}&sz=64`;
-      return `<a href="${url}" class="glass-btn" title="${type}" target="_blank"><img src="${logo}" alt="${type}">&nbsp;Available on HAL!</a>`;
-      }).join('');
-      
-      externalHtml = `<div class="highlight-resources">${buttons}</div>`;
-    }
-
-    const newHtml = `
-      <div class="highlight-entry">
-        <div class="highlight-text">
-          <strong>${title}</strong> ${date}<br>${desc}
-          ${externalHtml}
-        </div>
-        ${previewHtml}
-      </div>
-    `;
-
-    div.outerHTML = newHtml;
-  });
-}
-
-
-
-</script>
-<script>
-window.addEventListener("scroll", () => {
-  const header = document.getElementById("main-header");
-  if (window.scrollY > 100) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
-</script>
-<script>
-class TdItem extends HTMLElement {
-  static _uid = 0;
-
-  connectedCallback(){
-    const title = this.getAttribute('title') || '';
-    const desc  = this.getAttribute('desc')  || '';
-    const enonce = this.getAttribute('enonce');
-    const correction = this.getAttribute('correction');
-    const previewMode = (this.getAttribute('preview') || 'inline').toLowerCase();
-    const uid = `tdprev-${TdItem._uid++}`;
-
-    const res = Array.from(this.querySelectorAll('td-resource'))
-      .map(n => ({ title: n.getAttribute('title'), href: n.getAttribute('href') }))
-      .filter(r => r.title && r.href);
-
-    this.innerHTML = `
-      <div class="td-row">
-        <div>
-          <div class="td-title">${title}</div>
-          ${desc ? `<div class="td-desc">${desc}</div>` : ``}
-        </div>
-        <div class="td-actions">
-          ${enonce ? `
-            <div class="td-btn-wrap">
-              <a class="glass-btn ${previewMode==='inline' ? 'pdf-btn' : ''}"
-                 ${previewMode==='newtab' ? 'target="_blank"' : ''}
-                 ${previewMode==='inline' ? `data-target="${uid}" data-pdf="${enonce}"` : `href="${enonce}"`}
-                 title="Énoncé" aria-label="Énoncé">📄</a>
-              <span class="td-btn-label">Énoncé</span>
-            </div>` : ``}
-          ${correction ? `
-            <div class="td-btn-wrap">
-              <a class="glass-btn ${previewMode==='inline' ? 'pdf-btn' : ''}"
-                 ${previewMode==='newtab' ? 'target="_blank"' : ''}
-                 ${previewMode==='inline' ? `data-target="${uid}" data-pdf="${correction}"` : `href="${correction}"`}
-                 title="Correction" aria-label="Correction">✅</a>
-              <span class="td-btn-label">Correction</span>
-            </div>` : ``}
-        </div>
-        ${res.length ? `
-          <div class="td-resources">
-            ${res.map(r => `<span class="td-badge"><a href="${r.href}">${r.title}</a></span>`).join('')}
-          </div>` : ``}
-        ${previewMode==='inline' ? `
-          <div class="td-preview" id="${uid}" hidden>
-            <iframe src="" width="100%" height="600"
-              style="border:1px solid #ddd; border-radius:8px;"></iframe>
-          </div>` : ``}
-      </div>`;
-
-    if (previewMode === 'inline') {
-  this.addEventListener('click', (e) => {
-    const a = e.target.closest('.pdf-btn');
-    if (!a) return;
-    e.preventDefault();
-
-    const targetId = a.dataset.target;
-    const pdfUrl   = a.dataset.pdf;
-
-    const preview  = this.querySelector(`#${CSS.escape(targetId)}`);
-    const iframe   = preview.querySelector('iframe');
-
-    // Normaliser en URL absolue pour comparer correctement
-    const absUrl = new URL(pdfUrl, window.location.href).href;
-    const current = preview.dataset.current || "";
-
-    const isClosed = preview.hasAttribute('hidden');
-    const isSameDoc = (current === absUrl);
-
-    if (isClosed) {
-      // fermé -> ouvrir avec le doc demandé
-      iframe.src = absUrl;
-      preview.dataset.current = absUrl;
-      preview.removeAttribute('hidden');
-      a.setAttribute('aria-expanded', 'true');
-    } else if (isSameDoc) {
-      // déjà ouvert sur le même doc -> fermer
-      preview.setAttribute('hidden', '');
-      iframe.src = '';
-      preview.dataset.current = "";
-      a.setAttribute('aria-expanded', 'false');
-    } else {
-      // ouvert mais autre doc -> switcher sans fermer
-      iframe.src = absUrl;
-      preview.dataset.current = absUrl;
-      a.setAttribute('aria-expanded', 'true');
-    }
-  });
-}
-  }
-}
-customElements.define('td-item', TdItem);
-</script>
-
-
+  <script src="site.js" defer></script>
 </body>
-
-
 </html>

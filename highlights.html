@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlights - Rémy Vallot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="YaX1ODyLa3V0D36u9aIgvQXBG_idBO4bus8o-eaboDo">
+  <meta name="description" content="Talks, posters, workshops, and research highlights from Rémy Vallot.">
+  <meta name="author" content="Rémy Vallot">
+  <link rel="canonical" href="https://remyvallot.github.io/highlights.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="avatar_tab.png">
+</head>
+<body data-page="highlights">
+  <div class="global-wrapper" id="main-header">
+    <div class="header-horizontal">
+      <a href="index.html" data-page="home">
+        <img src="avatar.png" alt="Profile Picture" class="avatar">
+      </a>
+      <div class="title-block">
+        <div class="title-line">
+          <h1>
+            <a href="index.html" data-page="home" class="title-link">Rémy Vallot</a>
+          </h1>
+          <div class="social-buttons">
+            <a href="mailto:remy.vallot@ens-paris-saclay.fr" class="glass-btn" title="Email">
+              <img src="img/email.svg" alt="Mail">
+            </a>
+            <a href="https://www.linkedin.com/in/remy-vallot/" class="glass-btn" title="LinkedIn" target="_blank" rel="noopener">
+              <img src="img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://scholar.google.com/citations?user=RF2oOKoAAAAJ&hl=fr&oi=ao" class="glass-btn" title="Google Scholar" target="_blank" rel="noopener">
+              <img src="img/google-scholar.svg" alt="Google Scholar">
+            </a>
+            <a href="https://github.com/remyvallot" class="glass-btn" title="GitHub" target="_blank" rel="noopener">
+              <img src="img/github.svg" alt="GitHub">
+            </a>
+          </div>
+        </div>
+        <p class="subtitle">
+          Ph.D. candidate in Applied Mathematics<br>
+          Trying to accelerate the convergence of nonlinear solvers.
+        </p>
+        <p class="location">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#666" viewBox="0 0 24 24" class="map-icon" aria-hidden="true">
+            <path d="M12 2a7.008 7.008 0 0 0-7 7c0 5.353 6.036 11.45 6.293 11.707l.707.707.707-.707C12.964 20.45 19 14.353 19 9a7.008 7.008 0 0 0-7-7zm0 16.533C10.471 16.825 7 12.553 7 9a5 5 0 0 1 10 0c0 3.546-3.473 7.823-5 9.533z"/>
+            <path d="M12 6a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/>
+          </svg>
+          École Normale Supérieure Paris-Saclay & Michelin
+        </p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="highlights.html" class="nav-link active" data-page="highlights">Highlights</a>
+      <a href="curriculum.html" class="nav-link" data-page="curriculum">Curriculum</a>
+    </nav>
+
+    <main id="content">
+      <h1>Highlights</h1>
+      
+      <h2>Publications &amp; Articles</h2>
+      
+      <h3>2026</h3>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Learning features from Newton's algorithm: a way to accelerate nonlinear parametrized PDE solvers</strong><br>Rémy Vallot, 
+       <a href="https://fdevuyst.jimdofree.com/" class="supervisor">Florian De Vuyst</a>, 
+       <a href="https://scholar.google.com/citations?user=L_eRA6YAAAAJ&hl=en" class="supervisor">Thibault Dairay </a>,
+       <a href="https://sites.google.com/site/mougeotmathilde/" class="supervisor">Mathilde Mougeot</a>
+              <details class="highlight-abstract">
+                <summary>Abstract</summary>
+                <p>It is well known that Newton's method converges faster when the initial guess is closer to a root of a system of nonlinear equations. In this paper, a two-stage Newton initial guess strategy is proposed by learning features from a parameter-space sampling and a database of precomputed solutions. The method uses discrete Newton trajectories to construct two complementary reduced spaces: a solution feature space, built from converged states, and a corrective search direction feature space, built from intermediate Newton increments. For an unseen parameter, a regression model is used to predict a surrogate solution approximation. Then, in a second step, a residual-minimizing correction is computed using a dedicated GMRES-based approach. The resulting state is then used as an initial guess for the high-fidelity Newton method, which completes convergence. The corrective step is computationally inexpensive since it only requires residual evaluations and the solution of a small least-squares problem. The methodology is weakly intrusive once the high-fidelity residual fields and a script-based programming interface are available. This strategy reduces the number of Newton iterations and decreases the overall CPU time. Numerical experiments on representative PDE problems show quantifiable speedups compared with standalone surrogate initialization. Significant speedups are observed. This generic approach can be applied to a broad class of large-scale nonlinear problems.</p>
+              </details>
+              <div class="highlight-resources">
+                <a href="https://arxiv.org/pdf/2607.28036v1" class="glass-btn" title="arXiv" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=https://arxiv.org/pdf/2607.28036v1&sz=64" alt=""> Available on arXiv!</a><a href="https://hal.science/hal-05707013" class="glass-btn" title="HAL" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=https://hal.science/hal-05707013&sz=64" alt=""> Available on HAL!</a>
+              </div>
+            </div>
+            
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Conformal risk control for model-form uncertainty in parametric non-intrusive reduced-order models</strong><br><a href="https://edgarjaber.github.io/" class="supervisor">Edgar Jaber</a>, 
+       Rémy Vallot, 
+       <a href="https://scholar.google.com/citations?user=L_eRA6YAAAAJ&hl=en" class="supervisor">Thibault Dairay </a>, 
+       <a href="https://sites.google.com/site/mougeotmathilde/" class="supervisor">Mathilde Mougeot</a>
+              <details class="highlight-abstract">
+                <summary>Abstract</summary>
+                <p>Non-intrusive reduced-order models (NIROMs) have become a standard tool for approximating parametric partial differential equations from computer design of experiments while significantly reducing computational costs. However, assessing the reliability of their predictions remains a major challenge, particularly in extrapolation regimes or under limited training data. In this work, we introduce a framework for quantifying model-form uncertainty in NIROMs by combining a perturbative stochastic representation of reduced bases with distribution-free conformal-type methods. Starting from a deterministic reduced basis constructed from snapshot matrices, we model uncertainty through random perturbations defined on the Stiefel manifold, directed along the discarded modes, yielding stochastic reduced-order approximations whose induced variance reflects the basis-truncation error. A transport approximation gives a closed-form posterior variance that sepa- rates basis-induced from regression-induced uncertainty, without re-training the underlying Gaussian processes. We include this posterior variance within a conformal risk control calibration framework, that provides prediction sets with coordinate miscoverage guarantees. The calibration factor produced by this framework is itself an interpretable, scalar diagnostic of the quality of the uncertainty estimate. The methodology is evaluated on parametric PDE benchmarks and an industrial tire-manufacturing calendering process. Numerical experiments demonstrate reliable, locally informative uncertainty quantification that goes beyond the Gaussian predictive variance.</p>
+              </details>
+              <div class="highlight-resources">
+                <a href="https://arxiv.org/abs/2608.03360" class="glass-btn" title="arXiv" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=https://arxiv.org/abs/2608.03360&sz=64" alt=""> Available on arXiv!</a><a href="https://hal.science/hal-05710304/" class="glass-btn" title="HAL" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=https://hal.science/hal-05710304/&sz=64" alt=""> Available on HAL!</a>
+              </div>
+            </div>
+            
+          </div>
+      
+      <h2>Talks &amp; Posters</h2>
+      
+      <h3>2025</h3>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago</strong> December 1–5<br>Lightning talk introducing my poster on convergence acceleration using initialization strategies.
+              
+              
+            </div>
+            <a href="pdfs/imsi2025_LT.pdf" target="_blank" rel="noopener">
+                <img src="thumbnails/imsi2025_LT.jpg" alt="Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago Preview" class="highlight-thumb">
+              </a>
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago</strong> December 1–5<br>Presented a poster on convergence acceleration using initialization strategies and comparing the different proposed methods.
+              
+              <div class="highlight-resources">
+                <a href="https://hal.science/hal-05449018v1" class="glass-btn" title="HAL" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=https://hal.science/hal-05449018v1&sz=64" alt=""> Available on HAL!</a>
+              </div>
+            </div>
+            <a href="pdfs/imsi2025.pdf" target="_blank" rel="noopener">
+                <img src="thumbnails/imsi2025.png" alt="Application of Digital Twins to Large-Scale Complex Systems - IMSI Chicago Preview" class="highlight-thumb">
+              </a>
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>SMAI Biennial Conference</strong> June 2–6<br>Oral presentation of my ongoing work on convergence acceleration using initialization strategies and comparing the different proposed methods.
+              
+              
+            </div>
+            <a href="pdfs/smai2025.pdf" target="_blank" rel="noopener">
+                <img src="thumbnails/smai2025.png" alt="SMAI Biennial Conference Preview" class="highlight-thumb">
+              </a>
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>CIROQUO Workshop</strong> May 26–28<br>Presented a poster on convergence acceleration using initialization strategies and comparing the different proposed methods.
+              
+              
+            </div>
+            <a href="pdfs/ciroquo2025.pdf" target="_blank" rel="noopener">
+                <img src="thumbnails/ciroquo2025.png" alt="CIROQUO Workshop Preview" class="highlight-thumb">
+              </a>
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>IDAML Workshop</strong> May 8<br>Talk on my ongoing research, problem description, and initialization methods.
+              
+              
+            </div>
+            
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Internal Presentation at Michelin</strong> February 5<br>Presented a literature review to Michelin’s internal research team.
+              
+              
+            </div>
+            
+          </div>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>MathTech Meetings</strong> January 23<br>Short video presentation of my PhD topic for MathTech academic–industrial meetings.
+              
+              
+            </div>
+            <a href="https://youtube.com" target="_blank" rel="noopener">
+                <img src="thumbnails/pitch.png" alt="MathTech Meetings Preview" class="highlight-thumb">
+              </a>
+          </div>
+      
+      <h3>2024</h3>
+      
+      <div class="highlight-entry">
+            <div class="highlight-text">
+              <strong>Poster at Michelin PhD Day</strong> November 12<br>Poster presentation on early results of my PhD work.
+              
+              
+            </div>
+            
+          </div>
+    </main>
+  </div>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
